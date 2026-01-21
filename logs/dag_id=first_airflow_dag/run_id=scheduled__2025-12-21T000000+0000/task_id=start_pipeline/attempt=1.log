@@ -1,0 +1,17 @@
+[2025-12-22T15:18:29.214+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_airflow_dag.start_pipeline scheduled__2025-12-21T00:00:00+00:00 [queued]>
+[2025-12-22T15:18:29.225+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_airflow_dag.start_pipeline scheduled__2025-12-21T00:00:00+00:00 [queued]>
+[2025-12-22T15:18:29.226+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-12-22T15:18:29.260+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): start_pipeline> on 2025-12-21 00:00:00+00:00
+[2025-12-22T15:18:29.265+0000] {standard_task_runner.py:60} INFO - Started process 731 to run task
+[2025-12-22T15:18:29.270+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'first_airflow_dag', 'start_pipeline', 'scheduled__2025-12-21T00:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpeemvz95s']
+[2025-12-22T15:18:29.272+0000] {standard_task_runner.py:88} INFO - Job 23: Subtask start_pipeline
+[2025-12-22T15:18:29.455+0000] {task_command.py:423} INFO - Running <TaskInstance: first_airflow_dag.start_pipeline scheduled__2025-12-21T00:00:00+00:00 [running]> on host af4e2f7a12fd
+[2025-12-22T15:18:29.590+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='first_airflow_dag' AIRFLOW_CTX_TASK_ID='start_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-12-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-21T00:00:00+00:00'
+[2025-12-22T15:18:29.592+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-22T15:18:29.593+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "echo 'Airflow is working successfully'"]
+[2025-12-22T15:18:29.603+0000] {subprocess.py:86} INFO - Output:
+[2025-12-22T15:18:29.605+0000] {subprocess.py:93} INFO - Airflow is working successfully
+[2025-12-22T15:18:29.606+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-22T15:18:29.626+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=first_airflow_dag, task_id=start_pipeline, execution_date=20251221T000000, start_date=20251222T151829, end_date=20251222T151829
+[2025-12-22T15:18:29.684+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-22T15:18:29.694+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

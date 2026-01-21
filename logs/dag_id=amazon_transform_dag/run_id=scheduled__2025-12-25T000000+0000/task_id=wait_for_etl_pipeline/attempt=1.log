@@ -1,0 +1,21 @@
+[2025-12-26T15:01:18.455+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: amazon_transform_dag.wait_for_etl_pipeline scheduled__2025-12-25T00:00:00+00:00 [queued]>
+[2025-12-26T15:01:18.472+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: amazon_transform_dag.wait_for_etl_pipeline scheduled__2025-12-25T00:00:00+00:00 [queued]>
+[2025-12-26T15:01:18.473+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2025-12-26T15:01:18.501+0000] {taskinstance.py:2191} INFO - Executing <Task(ExternalTaskSensor): wait_for_etl_pipeline> on 2025-12-25 00:00:00+00:00
+[2025-12-26T15:01:18.510+0000] {standard_task_runner.py:60} INFO - Started process 192 to run task
+[2025-12-26T15:01:18.514+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'amazon_transform_dag', 'wait_for_etl_pipeline', 'scheduled__2025-12-25T00:00:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/transform_dag.py', '--cfg-path', '/tmp/tmpzz064eiy']
+[2025-12-26T15:01:18.517+0000] {standard_task_runner.py:88} INFO - Job 38: Subtask wait_for_etl_pipeline
+[2025-12-26T15:01:18.552+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-26T15:01:18.637+0000] {task_command.py:423} INFO - Running <TaskInstance: amazon_transform_dag.wait_for_etl_pipeline scheduled__2025-12-25T00:00:00+00:00 [running]> on host 01fa5def2fdb
+[2025-12-26T15:01:18.781+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='amazon_transform_dag' AIRFLOW_CTX_TASK_ID='wait_for_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-12-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-25T00:00:00+00:00'
+[2025-12-26T15:01:18.783+0000] {external_task.py:244} INFO - Poking for tasks ['validation_task'] in dag etl_pipeline_dag on 2025-12-25T00:00:00+00:00 ... 
+[2025-12-26T15:02:18.853+0000] {external_task.py:244} INFO - Poking for tasks ['validation_task'] in dag etl_pipeline_dag on 2025-12-25T00:00:00+00:00 ... 
+[2025-12-26T15:03:18.949+0000] {external_task.py:244} INFO - Poking for tasks ['validation_task'] in dag etl_pipeline_dag on 2025-12-25T00:00:00+00:00 ... 
+[2025-12-26T15:03:26.327+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-12-26T15:03:26.334+0000] {process_utils.py:131} INFO - Sending 15 to group 192. PIDs of all processes in the group: [192]
+[2025-12-26T15:03:26.348+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 192
+[2025-12-26T15:03:26.350+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-26T15:03:27.033+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 38 for task wait_for_etl_pipeline ((mysql.connector.errors.DatabaseError) 2003 (HY000): Can't connect to MySQL server on 'mysql:3306' (111)
+(Background on this error at: https://sqlalche.me/e/14/4xp6); 192)
+[2025-12-26T15:03:27.046+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=192, status='terminated', exitcode=1, started='15:01:18') (192) terminated with exit code 1
+[2025-12-26T15:03:27.047+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
